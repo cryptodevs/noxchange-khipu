@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "app_function": "noxchange_khipu.app", 
+        "aws_region": "us-east-1", 
+        "profile_name": "nicolas.kittsteiner", 
+        "project_name": "noxchange-khipu", 
+        "runtime": "python2.7", 
+        "s3_bucket": "noxchange-khipu-dev"
+    }
+}
