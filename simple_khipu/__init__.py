@@ -3,7 +3,6 @@ import hmac
 import requests
 import json
 from urllib import quote
-from collections import OrderedDict
 
 URL = 'https://khipu.com/api/2.0/'
 
@@ -33,15 +32,7 @@ def make_request(user_id, method, service, secret, json_data):
     
     if method is 'POST':
         payload = json.loads(json_data)
-        ordered = OrderedDict([
-
-            ('subject', payload.get('subject')),
-            ('amount', payload.get('amount')),
-            ('currency', payload.get('currency')),
-
-        ])
-
-        req = requests.post('{0}{1}'.format(URL, service),headers=headers,data=ordered)
+        req = requests.post('{0}{1}'.format(URL, service),headers=headers,data=payload)
     else:
         payload = format_data(json_data)
         req = requests.get('{0}{1}?{2}'.format(URL,service,payload),headers=headers)
@@ -65,7 +56,7 @@ def check_payment(user_id, secret, json_data):
 
 def get_banks(user_id, secret, json_data):
     """    
-    https://khipu.com/page/api-referencia#paymentsGet
+    https://khipu.com/page/api-referencia#banksGet
     """
     method = 'GET'
     service = 'banks'

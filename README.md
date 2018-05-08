@@ -1,5 +1,5 @@
 ##TODO
-- Generar una pseudoapi con requests en vez de la opensource, esto por la incompatibilidad de la version 1.3
+- OK Generar una pseudoapi con requests en vez de la opensource, esto por la incompatibilidad de la version 1.3
 - Generar pequeño formulario de prueba con callback usando return_url
 
 python sign_khipu.py 3301b6c98ac5eb36348ad8b6ac6a1613b519ed58 GET payments "notification_token=e2378adb7a79f8c7bc2690981bc4e816cbef9751f10612a41bcaab1ba8912601"

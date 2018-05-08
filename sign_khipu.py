@@ -19,7 +19,7 @@ def run():
      Test methods
     """
     #print(simple_khipu.check_payment(user_id,secret,data))
-    #print(simple_khipu.create_payment(user_id,secret,data))
+    print(simple_khipu.create_payment(user_id,secret,data))
     #print(simple_khipu.get_banks(user_id,secret,data))
 
 if __name__ == '__main__':
