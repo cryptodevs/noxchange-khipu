@@ -1,0 +1,15 @@
+{
+    "receiver_id": 178671,
+    "subject": "some subject",
+    "body": "some body",
+    "amount": 200,
+    "payer_email": "nicolas.kittsteiner@gmail.com",
+    "bank_id":"BCI",
+    "expires_date":"",
+    "transaction_id":"", 
+    "custom":"", 
+    "notify_url":"", 
+    "return_url":"", 
+    "cancel_url":"", 
+    "picture_url":""
+}
