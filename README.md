@@ -1,8 +1,25 @@
+# noxchange-khipu (POC)
+
+## Intro
+
+App Flask, que corre en AWS Lambda usando Zappa. Para correr local:
+
+`./noxchange_khipu.py`
+
 ##TODO
 - OK Generar una pseudoapi con requests en vez de la opensource, esto por la incompatibilidad de la version 1.3
 - Generar pequeño formulario de prueba con callback usando return_url
 
-python sign_khipu.py 3301b6c98ac5eb36348ad8b6ac6a1613b519ed58 GET payments "notification_token=e2378adb7a79f8c7bc2690981bc4e816cbef9751f10612a41bcaab1ba8912601"
+
+##Test
+
+Ver tests.py
+
+## Cifrado de mensajes
+
+Khipu utiliza un cifrado bastante particular. Requiere una autorización en el header que utiliza el `subscriber_id` y el `secret` que provee Khipu. El problema es que además te pide codificar el payload de cada mensaje.
+
+Ejemplo de llamada vía cURL.
 
 curl -i -H "Authorization: 178671:b4d39fecbf60a4633d371670eb4aa5b02771a3071ad72a1f7f247395a3db13dc" https://khipu.com/api/2.0/payments\?notification_token\=e2378adb7a79f8c7bc2690981bc4e816cbef9751f10612a41bcaab1ba8912601
 
@@ -32,16 +49,16 @@ curl -i -H "Authorization: 178671:b4d39fecbf60a4633d371670eb4aa5b02771a3071ad72a
   "attachment_urls":
   [
   ],
-  "bank": "Banco BCI",
+  "bank": "Banco BIC",
   "bank_id": "Evdfk",
-  "payer_name": "Nicolas Patricio Kittsteiner L",
-  "payer_email": "nicolas.kittsteiner@gmail.com",
-  "personal_identifier": "15.663.422-0",
-  "bank_account_number": "52189147",
+  "payer_name": "John Doe",
+  "payer_email": "XXXXX@gmail.com",
+  "personal_identifier": "XXX",
+  "bank_account_number": "XXXXX7",
   "out_of_date_conciliation": false,
   "transaction_id": "T-1000",
   "custom": "some url",
-  "responsible_user_email": "nicolas.kittsteiner@gmail.com",
+  "responsible_user_email": "XXXX@gmail.com",
   "send_reminders": false,
   "send_email": false,
   "payment_method": "simplified_transfer",
