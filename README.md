@@ -6,12 +6,12 @@ App Flask, que corre en AWS Lambda usando Zappa. Para correr local:
 
 `./noxchange_khipu.py`
 
-##TODO
+## TODO
 - OK Generar una pseudoapi con requests en vez de la opensource, esto por la incompatibilidad de la version 1.3
 - Generar pequeño formulario de prueba con callback usando return_url
 
 
-##Test
+## Test
 
 Ver tests.py
 
@@ -21,8 +21,11 @@ Khipu utiliza un cifrado bastante particular. Requiere una autorización en el h
 
 Ejemplo de llamada vía cURL.
 
+```
 curl -i -H "Authorization: 178671:b4d39fecbf60a4633d371670eb4aa5b02771a3071ad72a1f7f247395a3db13dc" https://khipu.com/api/2.0/payments\?notification_token\=e2378adb7a79f8c7bc2690981bc4e816cbef9751f10612a41bcaab1ba8912601
+```
 
+```
 {
   "payment_id": "d92mdt3vgeet",
   "payment_url": "https://khipu.com/payment/info/d92mdt3vgeet",
@@ -64,3 +67,4 @@ curl -i -H "Authorization: 178671:b4d39fecbf60a4633d371670eb4aa5b02771a3071ad72a
   "payment_method": "simplified_transfer",
   "conciliation_date": "2018-05-05T20:13:05.203Z"
 }
+```
